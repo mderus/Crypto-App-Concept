@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --redColor: #FF7676;
+  --greenColor: #8ECC60;
+}
+
+body {
+  font-size: 10px;
+  font-family: 'Montserrat';
+  color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#081C3B), to(#0C2B59));
+  background-image: linear-gradient(#081C3B, #0C2B59);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.main-wrapper {
+  overflow: hidden;
+  max-width: 728px;
+  margin: 0 auto;
+}
+
+.main-wrapper .wrap-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  width: 90vw;
+  padding-top: 2em;
+  max-width: 728px;
+}
+
+.main-wrapper .wrap-icons div {
+  cursor: pointer;
+}
+
+.main-wrapper .opened-menu.active {
+  right: 0;
+}
+
+.main-wrapper .opened-menu {
+  display: block;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: #162f55;
+  top: 0;
+  right: -100vw;
+  z-index: 1;
+  -webkit-transition: right .3s ease;
+  transition: right .3s ease;
+}
+
+.main-wrapper .opened-menu .fa-times {
+  position: absolute;
+  font-size: 2.5em;
+  padding-top: .5em;
+  margin: 0;
+  top: 0;
+  left: 1em;
+  cursor: pointer;
+}
+
+.main-wrapper .opened-menu ul {
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.main-wrapper .opened-menu ul li {
+  padding: 3.5em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.main-wrapper .opened-menu ul li a {
+  text-align: left;
+  color: white;
+  text-decoration: none;
+  font-size: 2.5em;
+  font-weight: 500;
+}
+
+.main-wrapper .opened-menu ul li a .fas {
+  font-size: .7em;
+  padding-right: 1em;
+  text-align: left;
+}
+
+.main-wrapper .opened-menu ul li a.active {
+  color: #1E69D9;
+}
+
+.main-wrapper h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-top: .5em;
+  font-weight: bold;
+}
+
+.main-wrapper .dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2em;
+}
+
+.main-wrapper .dots .dot {
+  background-color: #1E69D9;
+  height: .5em;
+  width: .5em;
+  border-radius: 50%;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  margin-left: .5em;
+}
+
+.main-wrapper .dots .dot.active {
+  background-color: white;
+  height: 1em;
+  width: 1em;
+  margin-left: .5em;
+}
+
+.main-wrapper .coin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2em;
+}
+
+.main-wrapper .coin img {
+  width: 90vw;
+}
+
+.main-wrapper .h2-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  width: 90vw;
+  padding-top: 3em;
+}
+
+.main-wrapper .h2-wrap h2 {
+  font-size: 2em;
+}
+
+.main-wrapper h2 {
+  width: 90vw;
+}
+
+.main-wrapper .transactions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  max-width: 728px;
+  padding-top: 1.5em;
+}
+
+.main-wrapper .transactions .element:last-child {
+  border-bottom: none;
+}
+
+.main-wrapper .transactions .element.sold .circle {
+  background-color: var(--redColor);
+}
+
+.main-wrapper .transactions .element.sold .up span {
+  color: var(--redColor);
+}
+
+.main-wrapper .transactions .element.bought .circle {
+  background-color: var(--greenColor);
+}
+
+.main-wrapper .transactions .element.bought span {
+  color: var(--greenColor);
+}
+
+.main-wrapper .transactions .element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.5em 0 5em;
+  max-width: 728px;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #1E69D9;
+}
+
+.main-wrapper .transactions .element .circle.red {
+  background-color: var(--redColor);
+}
+
+.main-wrapper .transactions .element .circle.green {
+  background-color: var(--greenColor);
+}
+
+.main-wrapper .transactions .element .circle {
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 50%;
+  background-color: var(--greenColor);
+}
+
+.main-wrapper .transactions .element .left {
+  position: absolute;
+  top: 1.5em;
+  left: 3em;
+}
+
+.main-wrapper .transactions .element .left h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  padding-bottom: 0.5em;
+}
+
+.main-wrapper .transactions .element .left p {
+  font-size: 1.5em;
+  color: #a1a1a1;
+}
+
+.main-wrapper .transactions .element .right {
+  text-align: right;
+  position: absolute;
+  top: 1.5em;
+  right: 0;
+}
+
+.main-wrapper .transactions .element .right p {
+  font-size: 1.5em;
+  padding-bottom: 0.5em;
+}
+
+.main-wrapper .transactions .element .right p span {
+  color: var(--greenColor);
+}
+
+.main-wrapper .transactions .element .right p span.red {
+  color: var(--redColor);
+}
+
+.main-wrapper .transactions .element .right p span.green {
+  color: var(--redGreen);
+}
+
+.main-wrapper .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 728px;
+}
+
+.main-wrapper .buttons button {
+  width: 45%;
+  border: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: white;
+  padding: 1.2em 3em;
+  border-radius: 5em;
+  cursor: pointer;
+  text-align: center;
+}
+
+.main-wrapper .buttons .buy {
+  background-color: var(--greenColor);
+}
+
+.main-wrapper .buttons .sell {
+  background-color: var(--redColor);
+}
+
+.main-wrapper .show {
+  color: white;
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0 auto;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+/*# sourceMappingURL=style.css.map */
